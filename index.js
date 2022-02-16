@@ -3,9 +3,12 @@ const bd = require('pg').Client;
 
 const express = require('express')
 const https = require("https");
+const cors = require('cors');
 
 const app = express()
-const port = 3000
+app.use(cors());
+app.options('*', cors());
+const port = 48010
 
 const onlineDataServerRequestBuffer = Buffer.from([-2,1],0,2);
 
